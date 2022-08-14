@@ -1,13 +1,12 @@
 package resources;
 
-import values.Card;
+import static views.Constants.*;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import static views.Constants.DECK_COUNT;
-import static views.Constants.HAND_COUNT;
+import values.Card;
 
 public class Algo {
     private LoseB loseB;
@@ -35,8 +34,9 @@ public class Algo {
         ///モデル生成分
         loseB = new LoseB();
         handsB = new HandsB(loseB);
-        loseA = new LoseA();
-        handsA = new HandsA(loseA);
+        handsA = new HandsA();
+        //6.Algo クラスのコンストラクタ内で，LoseA クラスのインスタンスが HandsA クラスのインスタンスを参照するよう，インスタンスの生成順や生成方法を変更する．
+        loseA = new LoseA(handsA);
         deck = new Deck();
         attackerA = new AttackerA();
         attackerB = new AttackerB();
