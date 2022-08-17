@@ -8,20 +8,19 @@ import java.util.stream.Collectors;
 
 public class LoseA {
 	HandsA handsA;
-    boolean value;
 
-    public void updateHandsA(List<Card> handsA) {
+    public LoseA(HandsA handsA) {
+    	this.handsA = handsA;
+    }
+    
+    public boolean getValue() {
         boolean result = true;
-        for (Card card : handsA) {
+        for (Card card : handsA.getValue()) {
             if (!card.isFace()) {
                 result = false;
                 break;
             }
         }
-        value = result;
-    }
-
-    public boolean getValue() {
-        return value;
+        return result;
     }
 }
