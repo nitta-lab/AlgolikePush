@@ -1,12 +1,13 @@
 package resources;
 
-import static views.Constants.*;
+import values.Card;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import values.Card;
+import static views.Constants.DECK_COUNT;
+import static views.Constants.HAND_COUNT;
 
 public class Algo {
     private LoseB loseB;
@@ -32,23 +33,10 @@ public class Algo {
 
     public Algo() {
         ///モデル生成分
-    	//loseB = new LoseB();
-    	//handsB = new HandsB(loseB);
-    	//loseA = new LoseA();
-    	//handsA = new HandsA(loseA);
-    	// deck = new Deck();
-    	//attackerA = new AttackerA();
-    	//attackerB = new AttackerB();
-    	//targetA = new TargetA();
-    	//targetB = new TargetB();
-    	//guessA = new GuessA();
-    	//guessB = new GuessB();
-        
-        ///モデル生成分
         loseB = new LoseB();
         handsB = new HandsB(loseB);
-        handsA = new HandsA();
-        loseA = new LoseA(handsA);
+        loseA = new LoseA();
+        handsA = new HandsA(loseA);
         deck = new Deck();
         attackerA = new AttackerA();
         attackerB = new AttackerB();
@@ -56,7 +44,6 @@ public class Algo {
         targetB = new TargetB();
         guessA = new GuessA();
         guessB = new GuessB();
-
 
         resultByDrawingA = new ResultByDrawingA(handsB, deck, handsA, targetA, guessA);
         resultByDrawingB = new ResultByDrawingB(deck, handsB, handsA, targetB, guessB);

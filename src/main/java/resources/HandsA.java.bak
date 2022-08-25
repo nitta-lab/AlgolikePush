@@ -1,31 +1,24 @@
 package resources;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-
 import values.Card;
+
+import java.util.*;
 
 public class HandsA {
     private Map.Entry<Boolean, Map.Entry<Integer, Integer>> resultBySelectingA;
     private Map.Entry<Boolean, Map.Entry<Integer, Integer>> resultBySelectingB;
     private Map.Entry<Boolean, Integer> resultByDrawingB;
     private Map.Entry<Boolean, Integer> resultByDrawingA;
-   //çÌèú
-    // private LoseA loseA;
+    private LoseA loseA;
     private List<Card> value = new ArrayList<Card>();
 
     public List<Card> getValue() {
         return value;
     }
 
-//    public HandsA(LoseA loseA) {
-//        this.loseA = loseA;
-//    }
-	public HandsA() {
-	}
-
+    public HandsA(LoseA loseA) {
+        this.loseA = loseA;
+    }
 
     public void updateResultBySelectingA(Map.Entry<Boolean, Map.Entry<Integer, Integer>> resultBySelectingA) {
         this.resultBySelectingA = resultBySelectingA;
@@ -37,9 +30,7 @@ public class HandsA {
             temp_if3 = this.value;
         }
         value = temp_if3;
-        
-        //çÌèú
-        //this.loseA.updateHandsA(value);
+        this.loseA.updateHandsA(value);
     }
 
     public void updateResultBySelectingB(Map.Entry<Boolean, Map.Entry<Integer, Integer>> resultBySelectingB) {
@@ -52,9 +43,7 @@ public class HandsA {
             temp_if4 = this.value;
         }
         value = temp_if4;
-
-        //çÌèú
-        //this.loseA.updateHandsA(value);
+        this.loseA.updateHandsA(value);
     }
 
     public void updateResultByDrawingB(Map.Entry<Boolean, Integer> resultByDrawingB, List<Card> deck) {
@@ -67,8 +56,7 @@ public class HandsA {
             temp_if6 = this.value;
         }
         value = temp_if6;
-        //çÌèú
-        //this.loseA.updateHandsA(value);
+        this.loseA.updateHandsA(value);
     }
 
     public void updateResultByDrawingA(Map.Entry<Boolean, Integer> resultByDrawingA, List<Card> deck) {
@@ -84,7 +72,6 @@ public class HandsA {
             temp_if7 = this.value;
         }
         value = temp_if7;
-        //çÌèú
-        //this.loseA.updateHandsA(value);
+        this.loseA.updateHandsA(value);
     }
 }

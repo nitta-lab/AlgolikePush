@@ -1,26 +1,43 @@
 package resources;
 
+import java.util.List;
+
 import values.Card;
 
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 public class LoseA {
-    boolean value;
+	//çÌèú
+    //boolean value;
+    
+    //í«â¡
+    HandsA handsA;
+    public LoseA(HandsA handsA) {
+    	this.handsA = handsA;
+    }
+    
 
-    public void updateHandsA(List<Card> handsA) {
+//    public void updateHandsA(List<Card> handsA) {
+//        boolean result = true;
+//        for (Card card : handsA) {
+//            if (!card.isFace()) {
+//                result = false;
+//                break;
+//            }
+//        }
+//        value = result;
+//    }
+
+    public boolean getValue() {
+        //ïœçX
+    	List<Card> listA = handsA.getValue();
         boolean result = true;
-        for (Card card : handsA) {
+        
+        for (Card card : listA) {
             if (!card.isFace()) {
                 result = false;
                 break;
             }
         }
-        value = result;
-    }
+        return result;
 
-    public boolean getValue() {
-        return value;
     }
 }
