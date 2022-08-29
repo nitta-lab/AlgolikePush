@@ -1,23 +1,24 @@
 package resources;
 
-import values.Card;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 
-import java.util.*;
+import values.Card;
 
 public class HandsA {
     private Map.Entry<Boolean, Map.Entry<Integer, Integer>> resultBySelectingA;
     private Map.Entry<Boolean, Map.Entry<Integer, Integer>> resultBySelectingB;
     private Map.Entry<Boolean, Integer> resultByDrawingB;
     private Map.Entry<Boolean, Integer> resultByDrawingA;
-    private LoseA loseA;
     private List<Card> value = new ArrayList<Card>();
 
     public List<Card> getValue() {
         return value;
     }
 
-    public HandsA(LoseA loseA) {
-        this.loseA = loseA;
+    public HandsA() {
     }
 
     public void updateResultBySelectingA(Map.Entry<Boolean, Map.Entry<Integer, Integer>> resultBySelectingA) {
@@ -30,7 +31,6 @@ public class HandsA {
             temp_if3 = this.value;
         }
         value = temp_if3;
-        this.loseA.updateHandsA(value);
     }
 
     public void updateResultBySelectingB(Map.Entry<Boolean, Map.Entry<Integer, Integer>> resultBySelectingB) {
@@ -43,7 +43,6 @@ public class HandsA {
             temp_if4 = this.value;
         }
         value = temp_if4;
-        this.loseA.updateHandsA(value);
     }
 
     public void updateResultByDrawingB(Map.Entry<Boolean, Integer> resultByDrawingB, List<Card> deck) {
@@ -56,7 +55,6 @@ public class HandsA {
             temp_if6 = this.value;
         }
         value = temp_if6;
-        this.loseA.updateHandsA(value);
     }
 
     public void updateResultByDrawingA(Map.Entry<Boolean, Integer> resultByDrawingA, List<Card> deck) {
@@ -72,6 +70,5 @@ public class HandsA {
             temp_if7 = this.value;
         }
         value = temp_if7;
-        this.loseA.updateHandsA(value);
     }
 }
